@@ -1,0 +1,25 @@
+name: "csn-pipeline-test"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    name: "csn-test"
+    runs-on: ubuntu-latest
+   # env:
+   #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+   #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    defaults:
+      run:
+        working-directory: source
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Terraform Format
+        id: checkworkingdirectory
+        run: pwd
