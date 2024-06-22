@@ -22,3 +22,9 @@ jobs:
 
       - name: check working directory
         run: pwd
+
+      - name: install docker
+        run: sudo apt install docker.io
+
+      - name: check the containers that are running
+        run: docker --version
