@@ -31,7 +31,7 @@ jobs:
       #     sudo systemctl enable docker
 
       - name: Check Docker version
-        run: docker --version
+        run:  docker --version
 
       - name: Check containers
         run:  sudo docker ps -a
