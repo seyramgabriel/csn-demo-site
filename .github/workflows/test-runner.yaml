@@ -13,13 +13,12 @@ jobs:
    #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
    #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-    defaults:
-      run:
-        working-directory: source
+   # defaults:
+   #   run:
+   #     working-directory: source
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: working-directory
-        id: checkworkingdirectory
+      - name: check working directory
         run: pwd
