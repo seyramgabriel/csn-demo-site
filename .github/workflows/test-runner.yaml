@@ -57,7 +57,7 @@ jobs:
       - name: Run the Docker Container
         run: sudo docker run -d --name csn-nginx -p 8080:80 csn-nginx
       
-      - name: Allow time to container to run
+      - name: Allow time for container to run
         run: sleep 30s
 
       - name: Test the web service
