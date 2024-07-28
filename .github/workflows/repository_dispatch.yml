@@ -1,0 +1,22 @@
+name: Repository Dispatch Example
+
+on:
+  repository_dispatch:
+    types: [custom-event-type-1, custom-event-type-2]
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Handle Custom Event Type 1
+        if: github.event.action == 'custom-event-type-1'
+        run: echo "Handling custom event type 1 actions..."
+
+      - name: Handle Custom Event Type 2
+        if: github.event.action == 'custom-event-type-2'
+        run: echo "Handling custom event type 2 actions..."
+
