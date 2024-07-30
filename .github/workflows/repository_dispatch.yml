@@ -19,12 +19,12 @@ jobs:
       - name: Handle Custom Event Type 2
         if: github.event.action == 'custom-event-type-2'
         run: |
-           echo "Handling custom event type 2 actions..."
-           echo "$MY_ACTION"
-           echo "Hello, $MY_ACTOR"
         env:  
           $MY_ACTION: ${{ github.action }}
           $MY_ACTOR:  ${{ github.actor }}
+           echo "Handling custom event type 2 actions..."
+           echo "$MY_ACTION"
+           echo "Hello, $MY_ACTOR"
            
            # echo "${{ github.action }}"
            # echo "${{ github.actor }}"
